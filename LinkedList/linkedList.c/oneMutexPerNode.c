@@ -1,4 +1,4 @@
-// gcc -g -Wall -o oneMutexPerNode oneMutexPerNode.c
+// gcc -g -Wall -o oneMutexPerNode oneMutexPerNode.c -lpthread
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
@@ -37,6 +37,7 @@ void* thread_func(void* arg) {
 int main(void) {
     int n;
     printf("Ingrese el limite de inserts: ");
+    scanf("%d", &n);
     struct list_node_s* head_p = NULL;
 
     // Execute with 1 thread
